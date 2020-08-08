@@ -5,7 +5,6 @@ const taskRouter = require('./router/taskRouter')
 const app = express()
 const port = process.env.PORT || 3000
 
-console.log(process.env.PORT)
 console.log(process.env.MONGODB_URL)
 console.log(process.env.JWT_SECRET)
 
