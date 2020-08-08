@@ -58,15 +58,15 @@ app.use(taskRouter);
 // myFunction();
 
 
-const myFunc = async() => {
-    const user = await User.findById('5f29985d96afd04a2816fe39');
-    await user.populate('tasks').execPopulate();
-    console.log(user);
+// const myFunc = async() => {
+//     const user = await User.findById('5f29985d96afd04a2816fe39');
+//     await user.populate('tasks').execPopulate();
+//     console.log(user);
 
-    const task = await Task.findById('5f29985d96afd04a2816fe39')
-    await task.populate('owner').execPopulate();
-    console.log(task.owner);
-}
+//     const task = await Task.findById('5f29985d96afd04a2816fe39')
+//     await task.populate('owner').execPopulate();
+//     console.log(task.owner);
+// }
 
 //myFunc();
 
