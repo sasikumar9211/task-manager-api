@@ -9,16 +9,14 @@ const {sendWelcomeMail,cancellationMail} = require('../emails/account')
 
 router.post('/users',async (req,res) =>{
 
-    console.log(req.body);
-
     const usr = new User(req.body);
     try{
         const token = await usr.generateAuthToken();
         await usr.save();
         sendWelcomeMail(usr.email,usr.name);
-        return res.status(201).send({usr,token});
+         res.status(201).send({usr,token});
     }catch(e){
-        return res.status(400).send('Error on saving the user',error)
+         res.status(400).send('Error on saving the user',e)
 
     }
 })
